@@ -117,5 +117,4 @@ This repository uses the BrowserStack SDK to run tests on BrowserStack. Follow t
 * Single Run - `mvn test -P single_ios`
 * Local Run - `mvn test -P local_ios` - Change `app` path in the `browserstack-ios.yml` file
 
-
-* You can view your test results on the [BrowserStack Automate dashboard](https://www.browserstack.com/automate)
+You can view your test results on the [BrowserStack Automate dashboard](https://www.browserstack.com/automate)
