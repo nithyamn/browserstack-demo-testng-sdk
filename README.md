@@ -87,18 +87,35 @@ This repository uses the BrowserStack SDK to run tests on BrowserStack. Follow t
 * Install dependencies `gradle build`
 
 ## Commands to execute test
-
-### Web
+### Using CLI command
+#### Web
 * Single Run - `mvn test -P single_web -Dbrowserstack.config=browserstack-web.yml`
 * Local Run - `mvn test -P local_web -Dbrowserstack.config=browserstack-web.yml`
 
-### Android
+#### Android
 * Single Run - `mvn test -P single_android -Dbrowserstack.config=browserstack-android.yml`
 * Local Run - `mvn test -P local_android -Dbrowserstack.config=browserstack-android.yml` - Change `app` path in the `browserstack-android.yml` file
 
-### iOS
+#### iOS
 * Single Run - `mvn test -P single_ios -Dbrowserstack.config=browserstack-ios.yml`
 * Local Run - `mvn test -P local_ios -Dbrowserstack.config=browserstack-ios.yml` - Change `app` path in the `browserstack-ios.yml` file
+
+### Using Environment variable
+* Web - `export BROWSERSTACK_CONFIG_FILE=browserstack-web.yml`
+* Android - `export BROWSERSTACK_CONFIG_FILE=browserstack-android.yml`
+* iOS - `export BROWSERSTACK_CONFIG_FILE=browserstack-ios.yml`
+
+#### Web
+* Single Run - `mvn test -P single_web`
+* Local Run - `mvn test -P local_web`
+
+#### Android
+* Single Run - `mvn test -P single_android`
+* Local Run - `mvn test -P local_android` - Change `app` path in the `browserstack-android.yml` file
+
+#### iOS
+* Single Run - `mvn test -P single_ios`
+* Local Run - `mvn test -P local_ios` - Change `app` path in the `browserstack-ios.yml` file
 
 
 * You can view your test results on the [BrowserStack Automate dashboard](https://www.browserstack.com/automate)
