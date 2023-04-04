@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Sample" thread-count="5" parallel="tests">
+    <test name="SingleTest1">
+        <parameter name="device" value="Google Pixel 7"/>
+        <classes>
+            <class name="web.TraditionalTest"/>
+        </classes>
+    </test>
+    <test name="SingleTest2">
+        <parameter name="device" value="iPhone 14"/>
+        <classes>
+            <class name="web.TraditionalTest"/>
+        </classes>
+    </test>
+    <test name="SingleTest3">
+        <parameter name="browser" value="chrome"/>
+        <classes>
+            <class name="web.TraditionalTest"/>
+        </classes>
+    </test>
+    <test name="SingleTest4">
+        <parameter name="browser" value="Edge"/>
+        <classes>
+            <class name="web.TraditionalTest"/>
+        </classes>
+    </test>
+    <test name="SingleTest5">
+        <parameter name="browser" value="Safari"/>
+        <classes>
+            <class name="web.TraditionalTest"/>
+        </classes>
+    </test>
+</suite>

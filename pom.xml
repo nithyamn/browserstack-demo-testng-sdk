@@ -53,6 +53,12 @@
             <version>LATEST</version>
             <scope>compile</scope>
         </dependency>
+        <dependency>
+            <groupId>org.apache.httpcomponents</groupId>
+            <artifactId>httpclient</artifactId>
+            <version>4.5.14</version>
+            <scope>test</scope>
+        </dependency>
     </dependencies>
     <build>
     <plugins>
@@ -85,6 +91,14 @@
           <argLine>-javaagent:${com.browserstack:browserstack-java-sdk:jar}</argLine>
         </configuration>
       </plugin>
+        <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-compiler-plugin</artifactId>
+            <configuration>
+                <source>11</source>
+                <target>11</target>
+            </configuration>
+        </plugin>
     </plugins>
   </build>
 
@@ -184,6 +198,59 @@
                         <configuration>
                             <suiteXmlFiles>
                                 <suiteXmlFile>config/android-local-app.xml</suiteXmlFile>
+                            </suiteXmlFiles>
+                            <argLine>-javaagent:${com.browserstack:browserstack-java-sdk:jar}</argLine>
+                        </configuration>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+        <profile>
+            <id>file_test</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <artifactId>maven-surefire-plugin</artifactId>
+                        <version>${surefire.version}</version>
+                        <configuration>
+                            <suiteXmlFiles>
+                                <suiteXmlFile>config/media-config.xml</suiteXmlFile>
+                            </suiteXmlFiles>
+                            <argLine>-javaagent:${com.browserstack:browserstack-java-sdk:jar}</argLine>
+                        </configuration>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+
+        <profile>
+            <id>network_test</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <artifactId>maven-surefire-plugin</artifactId>
+                        <version>${surefire.version}</version>
+                        <configuration>
+                            <suiteXmlFiles>
+                                <suiteXmlFile>config/network-config.xml</suiteXmlFile>
+                            </suiteXmlFiles>
+                            <argLine>-javaagent:${com.browserstack:browserstack-java-sdk:jar}</argLine>
+                        </configuration>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+
+        <profile>
+            <id>geo_test</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <artifactId>maven-surefire-plugin</artifactId>
+                        <version>${surefire.version}</version>
+                        <configuration>
+                            <suiteXmlFiles>
+                                <suiteXmlFile>config/geo-config.xml</suiteXmlFile>
                             </suiteXmlFiles>
                             <argLine>-javaagent:${com.browserstack:browserstack-java-sdk:jar}</argLine>
                         </configuration>

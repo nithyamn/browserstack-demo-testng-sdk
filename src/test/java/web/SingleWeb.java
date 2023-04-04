@@ -1,11 +1,16 @@
 package web;
 
+import io.appium.java_client.AppiumDriver;
+import io.appium.java_client.android.AndroidDriver;
 import org.openqa.selenium.*;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.remote.SessionId;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
+import java.io.FileOutputStream;
+import java.io.OutputStream;
+import java.util.Base64;
 import java.util.List;
 
 
@@ -44,11 +49,6 @@ class SingleWeb extends BaseTestWeb {
 
         String confirmationMessage = driver.findElement(By.id("confirmation-message")).getText();
         String orderId = driver.findElement(By.cssSelector(".checkout-form div:nth-child(2) strong")).getText();
-        if(confirmationMessage.contains("successfully"))
-            System.out.println("Order placed successfully with order id: "+orderId);
-        else
-            System.out.println("Some issues with placing order! Kindly review.");
-
-        Thread.sleep(2000);
+        Assert.assertTrue(confirmationMessage.contains("successfully"));
     }
 }

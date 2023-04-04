@@ -12,7 +12,7 @@ accessKey: BROWSERSTACK_ACCESS_KEY
 # Set 'projectName' to the name of your project. Example, Marketing Website
 projectName: Demo Testng SDK
 # Set `buildName` as the name of the job / testsuite being run
-buildName: browserstack-testng-suite
+buildName: browserstack-testng-suite-network-config
 # `buildIdentifier` is a unique id to differentiate every execution that gets appended to
 # buildName. Choose your buildIdentifier format from the available expressions:
 # ${BUILD_NUMBER} (Default): Generates an incremental counter with every execution
@@ -29,21 +29,12 @@ framework: testng
 # Platforms object contains all the browser / device combinations you want to test on.
 # Entire list available here -> (https://www.browserstack.com/list-of-browsers-and-platforms/automate)
 platforms:
-  - os: OS X
-    osVersion: Big Sur
-    browserName: Chrome
-    browserVersion: latest
-  - os: Windows
-    osVersion: 10
-    browserName: Edge
-    browserVersion: latest
   - deviceName: Samsung Galaxy S22 Ultra
     browserName: chrome
     osVersion: 12.0
   - deviceName: iPhone 14
     browserName: safari
     osVersion: 16
-#
 # =======================
 # Parallels per Platform
 # =======================
@@ -80,4 +71,3 @@ debug: false # <boolean> # Set to true if you need screenshots for every seleniu
 networkLogs: false # <boolean> Set to true to enable HAR logs capturing
 consoleLogs: errors # <string> Remote browser's console debug levels to be printed (Default: errors)
 # Available options are `disable`, `errors`, `warnings`, `info`, `verbose` (Default: errors)
-browserstack.geoLocation: BE
