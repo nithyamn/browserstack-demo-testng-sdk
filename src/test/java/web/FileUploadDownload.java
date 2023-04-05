@@ -32,7 +32,7 @@ public class FileUploadDownload extends BaseTestWeb {
         SessionId sessionId = ((RemoteWebDriver)driver).getSessionId();
         driver.get("https://the-internet.herokuapp.com/download");
         driver.findElement(By.linkText("sample.jpg")).click();
-        Thread.sleep(3000);
+        Thread.sleep(4500);
         JavascriptExecutor jse = (JavascriptExecutor)driver;
         System.out.println(jse.executeScript("browserstack_executor: {\"action\": \"fileExists\", \"arguments\": {\"fileName\": \"sample.jpg\"}}"));
         System.out.println(jse.executeScript("browserstack_executor: {\"action\": \"getFileProperties\", \"arguments\": {\"fileName\": \"sample.jpg\"}}"));
