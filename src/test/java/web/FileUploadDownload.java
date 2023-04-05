@@ -31,17 +31,17 @@ public class FileUploadDownload extends BaseTestWeb {
         //Download file
         SessionId sessionId = ((RemoteWebDriver)driver).getSessionId();
         driver.get("https://the-internet.herokuapp.com/download");
-        driver.findElement(By.linkText("selenium.png")).click();
+        driver.findElement(By.linkText("sample.jpg")).click();
         Thread.sleep(2000);
         JavascriptExecutor jse = (JavascriptExecutor)driver;
-        System.out.println(jse.executeScript("browserstack_executor: {\"action\": \"fileExists\", \"arguments\": {\"fileName\": \"selenium.png\"}}"));
-        System.out.println(jse.executeScript("browserstack_executor: {\"action\": \"getFileProperties\", \"arguments\": {\"fileName\": \"selenium.png\"}}"));
-        String base64EncodedFile = (String) jse.executeScript("browserstack_executor: {\"action\": \"getFileContent\", \"arguments\": {\"fileName\": \"selenium.png\"}}");
+        System.out.println(jse.executeScript("browserstack_executor: {\"action\": \"fileExists\", \"arguments\": {\"fileName\": \"sample.jpg\"}}"));
+        System.out.println(jse.executeScript("browserstack_executor: {\"action\": \"getFileProperties\", \"arguments\": {\"fileName\": \"sample.jpg\"}}"));
+        String base64EncodedFile = (String) jse.executeScript("browserstack_executor: {\"action\": \"getFileContent\", \"arguments\": {\"fileName\": \"sample.jpg\"}}");
 
         // Decode the content to Base64 and write to a file
         byte[] data = Base64.getDecoder().decode(base64EncodedFile);
         try{
-            OutputStream stream = new FileOutputStream("res/selenium.png");
+            OutputStream stream = new FileOutputStream("res/sample.jpg");
             stream.write(data);
             stream.close();
         }catch (Exception e){
