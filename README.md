@@ -118,7 +118,7 @@ This repository uses the BrowserStack SDK to run tests on BrowserStack. Follow t
 * Local Run - `mvn test -P local_ios` - Change `app` path in the `browserstack-ios.yml` file
 
 ### Advanced features
-* Upload & Download - `mvn test -P file_test -Dbrowserstack.config=browserstack-web.yml`
+* Upload & Download - `mvn test -P file_test -Dbrowserstack.config=browserstack-media.yml`
 * Geo functionality - `mvn test -P geo_test -Dbrowserstack.config=browserstack-web.yml`
 * Network Throttling - `mvn test -P network_test -Dbrowserstack.config=browserstack-networkconfig.yml`
 * Hide sensitive data - Run `config/traditional-config.xml` from IDE
