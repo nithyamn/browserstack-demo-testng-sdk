@@ -16,18 +16,18 @@ steps:
     browserstackLocal: true
 - task: BrowserStackAppUploader@0
   inputs:
-    appPath: 'src/test/resources/WikipediaSample.apk'
-# - task: Maven@4
-#   inputs:
-#     mavenPomFile: 'pom.xml'
-#     goals: 'test -P single_android -Dbrowserstack.config=browserstack-android.yml'
-#     publishJUnitResults: true
-#     testResultsFiles: '**/surefire-reports/TEST-*.xml'
-#     javaHomeOption: 'JDKVersion'
-#     mavenVersionOption: 'Default'
-#     mavenAuthenticateFeed: false
-#     effectivePomSkip: false
-#     sonarQubeRunAnalysis: false
+    appPath: '/absoulte/path/to/apk/or/ipa'
+- task: Maven@4
+  inputs:
+    mavenPomFile: 'pom.xml'
+    goals: 'test -P single_android -Dbrowserstack.config=browserstack-android.yml'
+    publishJUnitResults: true
+    testResultsFiles: '**/surefire-reports/TEST-*.xml'
+    javaHomeOption: 'JDKVersion'
+    mavenVersionOption: 'Default'
+    mavenAuthenticateFeed: false
+    effectivePomSkip: false
+    sonarQubeRunAnalysis: false
 - task: BrowserStackStopLocal@0
 - task: BrowserStackResults@1
   inputs:
