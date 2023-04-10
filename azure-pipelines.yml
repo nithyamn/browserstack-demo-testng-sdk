@@ -1,0 +1,35 @@
+# Starter pipeline
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+
+trigger:
+- main
+
+pool:
+  vmImage: ubuntu-latest
+
+steps:
+- task: BrowserStackConfig@0
+  inputs:
+    BrowserStackServiceEndPoint: 'bstack-conn'
+    browserstackLocal: true
+- task: BrowserStackAppUploader@0
+  inputs:
+    appPath: 'src/test/resources/WikipediaSample.apk'
+- task: Maven@4
+  inputs:
+    mavenPomFile: 'pom.xml'
+    goals: 'test -P single_web -Dbrowserstack.config=browserstack-web.yml'
+    publishJUnitResults: true
+    testResultsFiles: '**/surefire-reports/TEST-*.xml'
+    javaHomeOption: 'JDKVersion'
+    mavenVersionOption: 'Default'
+    mavenAuthenticateFeed: false
+    effectivePomSkip: false
+    sonarQubeRunAnalysis: false
+- task: BrowserStackStopLocal@0
+- task: BrowserStackResults@1
+  inputs:
+    browserstackProduct: 'app automate'
+
