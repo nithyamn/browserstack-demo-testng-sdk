@@ -49,6 +49,7 @@ class SingleWeb extends BaseTestWeb {
 
         String confirmationMessage = driver.findElement(By.id("confirmation-message")).getText();
         String orderId = driver.findElement(By.cssSelector(".checkout-form div:nth-child(2) strong")).getText();
+        driver.findElement(By.className("optimizedCheckout-buttonSecondary")).click();
         Assert.assertTrue(confirmationMessage.contains("successfully"));
     }
 }

@@ -17,9 +17,10 @@ public class FileUploadDownload extends BaseTestWeb {
     @Test
     public void fileUploadTest() throws Exception {
         SessionId sessionId = ((RemoteWebDriver)driver).getSessionId();
-        ((RemoteWebDriver) driver).setFileDetector(new LocalFileDetector());
+        //((RemoteWebDriver) driver).setFileDetector(new LocalFileDetector());
         driver.get("https://the-internet.herokuapp.com/upload");
-        driver.findElement(By.id("file-upload")).sendKeys("/Users/nithyamani/Desktop/sample.jpg");
+//        driver.findElement(By.id("file-upload")).sendKeys("/Users/nithyamani/Desktop/sample.jpg");
+        driver.findElement(By.id("file-upload")).sendKeys("C:\\\\Users\\hello\\\\Documents\\\\images\\\\sample.jpg");
         driver.findElement(By.id("file-submit")).click();
         Thread.sleep(2000);
         GetSessionDetails.sessionData(sessionId);

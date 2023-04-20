@@ -1,5 +1,7 @@
 package web;
 import org.json.JSONArray;
+import org.json.JSONObject;
+import org.openqa.selenium.MutableCapabilities;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.annotations.AfterMethod;
@@ -21,13 +23,23 @@ public class BaseTestWeb {
     @BeforeMethod(alwaysRun = true)
     @SuppressWarnings("unchecked")
     public void setUp() throws Exception {
-        ChromeOptions options = new ChromeOptions();
+//        ChromeOptions options = new ChromeOptions();
 //        options.addArguments("start-maximized");
 //        driver = new ChromeDriver(options);
 //        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
 
         //driver = new ChromeDriver(options);
-        driver= new RemoteWebDriver(new URL(URL),options);
+        //browserstackOptions.put("uploadMedia",new Object[]{""});
+        DesiredCapabilities capabilities = new DesiredCapabilities();
+//        capabilities.setCapability("bstack:options", new JSONObject()
+//                .put("uploadMedia", new JSONArray().put(""))
+//        );
+//        MutableCapabilities capabilities = new MutableCapabilities();
+//        HashMap<String, Object> browserstackOptions = new HashMap<String, Object>();
+//        browserstackOptions.put("uploadMedia",new String[]{""});
+//        capabilities.setCapability("bstack:options", browserstackOptions);
+
+        driver= new RemoteWebDriver(new URL(URL),capabilities);
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
     }
 
