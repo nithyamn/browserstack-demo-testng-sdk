@@ -7,7 +7,7 @@ steps:
   inputs:
     versionSpec: '10.x'
  
-- bash: npm install uuid
+# - bash: npm install uuid
  
 - task: JavaToolInstaller@0
   displayName: 'Use Java 11'
