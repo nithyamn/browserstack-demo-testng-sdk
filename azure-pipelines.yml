@@ -16,7 +16,7 @@ steps:
     browserstackLocal: true
 - task: BrowserStackAppUploader@0
   inputs:
-    appPath: '/absoulte/path/to/apk/or/ipa'
+    appPath: 'src/test/resources/WikipediaSample.apk'
 - task: Maven@4
   inputs:
     mavenPomFile: 'pom.xml'
