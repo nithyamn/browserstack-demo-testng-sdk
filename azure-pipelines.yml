@@ -22,7 +22,7 @@ steps:
 - task: Maven@4
   inputs:
     mavenPomFile: 'pom.xml'
-    goals: 'test -P local_web -Dbrowserstack.config=browserstack-web.yml'
+    goals: 'test -P single_web -Dbrowserstack.config=browserstack-web.yml'
     publishJUnitResults: true
     testResultsFiles: '**/surefire-reports/TEST-*.xml'
     javaHomeOption: 'JDKVersion'
