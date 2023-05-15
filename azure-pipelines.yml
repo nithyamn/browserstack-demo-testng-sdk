@@ -19,9 +19,20 @@ steps:
   inputs:
     BrowserStackServiceEndPoint: 'bstack-conn'
     browserstackLocal: true
+- task: Maven@4
+  inputs:
+    mavenPomFile: 'pom.xml'
+    goals: 'test -P single_web -Dbrowserstack.config=browserstack-web.yml'
+    publishJUnitResults: true
+    testResultsFiles: '**/surefire-reports/TEST-*.xml'
+    javaHomeOption: 'JDKVersion'
+    mavenVersionOption: 'Default'
+    mavenAuthenticateFeed: false
+    effectivePomSkip: false
+    sonarQubeRunAnalysis: false
 - task: BrowserStackResults@1
   inputs:
-    browserstackProduct: 'App Automate'
+    browserstackProduct: 'automate'
   
 - task: Gradle@3
   inputs:
