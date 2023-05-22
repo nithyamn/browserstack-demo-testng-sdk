@@ -4,6 +4,7 @@ import org.openqa.selenium.*;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.remote.SessionId;
 import org.testng.Assert;
+import org.testng.Reporter;
 import org.testng.annotations.Test;
 
 import java.util.List;
@@ -15,10 +16,12 @@ class SingleWeb extends BaseTestWeb {
     @Test
     public void e2eTest() throws Exception {
         /*** Fetch Session ID***/
+        Reporter.log("[[PROPERTY|id=TC-1]]\n", true);
+
         SessionId sessionId = ((RemoteWebDriver)driver).getSessionId();
         driver.get("https://bstackdemo.com/");
         driver.findElement(By.id("signin")).click();
-        driver.findElement(By.cssSelector("#username input")).sendKeys("demouser", Keys.ENTER);
+        driver.findElement(By.cssSelector("#username input")).sendKeys("image_not_loading_user", Keys.ENTER);
         driver.findElement(By.cssSelector("#password input")).sendKeys("testingisfun99", Keys.ENTER);
         driver.findElement(By.id("login-btn")).click();
         String productName = "iPhone 12";
@@ -44,10 +47,11 @@ class SingleWeb extends BaseTestWeb {
 
         String confirmationMessage = driver.findElement(By.id("confirmation-message")).getText();
         String orderId = driver.findElement(By.cssSelector(".checkout-form div:nth-child(2) strong")).getText();
-        if(confirmationMessage.contains("successfully"))
-            System.out.println("Order placed successfully with order id: "+orderId);
-        else
-            System.out.println("Some issues with placing order! Kindly review.");
+        Assert.assertTrue(confirmationMessage.contains("successfully1"));
+//        if(confirmationMessage.contains("successfully1"))
+//            System.out.println("Order placed successfully with order id: "+orderId);
+//        else
+//            System.out.println("Some issues with placing order! Kindly review.");
 
         Thread.sleep(2000);
     }
