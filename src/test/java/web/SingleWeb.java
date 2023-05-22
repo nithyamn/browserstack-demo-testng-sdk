@@ -47,7 +47,7 @@ class SingleWeb extends BaseTestWeb {
 
         String confirmationMessage = driver.findElement(By.id("confirmation-message")).getText();
         String orderId = driver.findElement(By.cssSelector(".checkout-form div:nth-child(2) strong")).getText();
-        Assert.assertTrue(confirmationMessage.contains("successfully1"));
+        Assert.assertTrue(confirmationMessage.contains("successfully"));
 //        if(confirmationMessage.contains("successfully1"))
 //            System.out.println("Order placed successfully with order id: "+orderId);
 //        else
