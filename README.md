@@ -90,7 +90,7 @@ This repository uses the BrowserStack SDK to run tests on BrowserStack. Follow t
 ### Using CLI command
 #### Web
 * Single Run - `mvn test -P single_web -Dbrowserstack.config=browserstack-web.yml`
-* Local Run - `mvn test -P local_web -Dbrowserstack.config=browserstack-web.yml`
+* Local Run - `python3 -m http.server 3000 & mvn test -P local_web -Dbrowserstack.config=browserstack-web-local.yml`
 
 #### Android
 * Single Run - `mvn test -P single_android -Dbrowserstack.config=browserstack-android.yml`
@@ -102,12 +102,13 @@ This repository uses the BrowserStack SDK to run tests on BrowserStack. Follow t
 
 ### Using Environment variable
 * Web - `export BROWSERSTACK_CONFIG_FILE=browserstack-web.yml`
+* Web Local run - `export BROWSERSTACK_CONFIG_FILE=browserstack-web-local.yml`
 * Android - `export BROWSERSTACK_CONFIG_FILE=browserstack-android.yml`
 * iOS - `export BROWSERSTACK_CONFIG_FILE=browserstack-ios.yml`
 
 #### Web
 * Single Run - `mvn test -P single_web`
-* Local Run - `mvn test -P local_web`
+* Local Run - `python3 -m http.server 3000 & mvn test -P local_web`
 
 #### Android
 * Single Run - `mvn test -P single_android`
