@@ -9,12 +9,12 @@ steps:
  
 # - bash: npm install uuid
  
-- task: JavaToolInstaller@0
-  displayName: 'Use Java 11'
-  inputs:
-    versionSpec: 11
-    jdkArchitectureOption: x64
-    jdkSourceOption: PreInstalled
+#- task: JavaToolInstaller@0
+#  displayName: 'Use Java 11'
+#  inputs:
+#    versionSpec: 11
+#    jdkArchitectureOption: x64
+#    jdkSourceOption: PreInstalled
 - task: BrowserStackConfig@0
   inputs:
     BrowserStackServiceEndPoint: 'bstack-conn'
