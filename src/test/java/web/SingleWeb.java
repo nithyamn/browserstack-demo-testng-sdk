@@ -16,7 +16,7 @@ class SingleWeb extends BaseTestWeb {
     @Test
     public void e2eTest() throws Exception {
         /*** Fetch Session ID***/
-        Reporter.log("[[PROPERTY|id=TC-1]]\n", true);
+        //Reporter.log("[[PROPERTY|id=TC-1]]\n", true);
 
         SessionId sessionId = ((RemoteWebDriver)driver).getSessionId();
         driver.get("https://bstackdemo.com/");

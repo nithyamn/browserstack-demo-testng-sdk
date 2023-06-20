@@ -45,7 +45,10 @@ platforms:
   - deviceName: Google Pixel 6 Pro
     osVersion: 12.0
     platformName: android
-
+#platforms:
+#  - platformName: android
+#    appium:deviceName: Samsung Galaxy S.*
+#    platformVersion: 1[012]
 # =======================
 # Parallels per Platform
 # =======================
