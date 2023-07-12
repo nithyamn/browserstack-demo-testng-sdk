@@ -12,16 +12,18 @@ accessKey: BROWSERSTACK_ACCESS_KEY
 # Set 'projectName' to the name of your project. Example, Marketing Website
 projectName: Demo Testng SDK
 # Set `buildName` as the name of the job / testsuite being run
-buildName: browserstack-testng-suite
+buildName: BROWSERSTACK_BUILD_NAME
 # `buildIdentifier` is a unique id to differentiate every execution that gets appended to
 # buildName. Choose your buildIdentifier format from the available expressions:
 # ${BUILD_NUMBER} (Default): Generates an incremental counter with every execution
 # ${DATE_TIME}: Generates a Timestamp with every execution. Eg. 05-Nov-19:30
 # Read more about buildIdentifiers here -> https://www.browserstack.com/docs/automate/selenium/organize-tests
-buildIdentifier: '#${BUILD_NUMBER}' # Supports strings along with either/both ${expression}
+#buildIdentifier: ${BUILD_NUMBER} # Supports strings along with either/both ${expression}
 # Set `framework` of your test suite. Example, `testng`, `cucumber`, `cucumber-testng`
 # This property is needed to send test context to BrowserStack (test name, status)
+CUSTOM_TAG_1: "SMOKE TESTNG"
 framework: testng
+
 
 # =======================================
 # Platforms (Browsers / Devices to test)
@@ -56,7 +58,7 @@ platforms:
 # Example 1 - If you have configured 3 platforms and set `parallelsPerPlatform` as 2, a total of 6 (2 * 3) parallel threads will be used on BrowserStack
 #
 # Example 2 - If you have configured 1 platform and set `parallelsPerPlatform` as 5, a total of 5 (1 * 5) parallel threads will be used on BrowserStack
-parallelsPerPlatform: 1
+parallelsPerPlatform: 1 # set to 0 for sequential runs
 # this determines the number of parallels to be spawned (this x number of platforms specified) -> the no .of test cases would determine on the
 #no.of. scenarios x the platform combination (4 scenarios x 3 platforms = 12 sessions)
 
@@ -83,3 +85,4 @@ debug: false # <boolean> # Set to true if you need screenshots for every seleniu
 networkLogs: true # <boolean> Set to true to enable HAR logs capturing
 consoleLogs: errors # <string> Remote browser's console debug levels to be printed (Default: errors)
 # Available options are `disable`, `errors`, `warnings`, `info`, `verbose` (Default: errors)
+testObservability: true
