@@ -2,7 +2,7 @@ pool:
   vmImage: ubuntu-latest
 
 variables:
-  BROWSERSTACK_BUILD_NAME: $(System.JobDisplayName) $(System.DefinitionId)
+  BROWSERSTACK_BUILD_NAME: $(System.TeamProject)
 
 steps:
  
