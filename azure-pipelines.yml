@@ -1,11 +1,6 @@
 pool:
   vmImage: ubuntu-latest
 
-variables:
-  env:
-    BROWSERSTACK_USERNAME: nithyamani1
-    BROWSERSTACK_ACCESS_KEY: vZcXz5fppKkLzzRqbHyw
-    BROWSERSTACK_BUILD_NAME: $(System.TeamProject)-$(Build.DefinitionName)-$(Build.BuildNumber)
 
 steps:
  
@@ -31,6 +26,10 @@ steps:
 #     BrowserStackServiceEndPoint: 'bstack-conn'
 #     browserstackLocal: false
 - task: Maven@4
+  env:
+    BROWSERSTACK_USERNAME: nithyamani1
+    BROWSERSTACK_ACCESS_KEY: vZcXz5fppKkLzzRqbHyw
+    BROWSERSTACK_BUILD_NAME: $(System.TeamProject)-$(Build.DefinitionName)-$(Build.BuildNumber)
   inputs:
     mavenPomFile: 'pom.xml'
     goals: 'test -P single_web -Dbrowserstack.config=browserstack-web.yml'
