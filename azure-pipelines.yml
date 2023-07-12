@@ -2,6 +2,8 @@ pool:
   vmImage: ubuntu-latest
 
 variables:
+  BROWSERSTACK_USERNAME: $(BROWSERSTACK_USERNAME)
+  BROWSERSTACK_ACCESS_KEY: $(BROWSERSTACK_ACCESS_KEY)
   BROWSERSTACK_BUILD_NAME: $(System.TeamProject)-$(Build.DefinitionName)-$(Build.BuildNumber)
 
 steps:
