@@ -8,9 +8,9 @@ steps:
   inputs:
     versionSpec: '10.x'
 
-- task: CmdLine@2
-  inputs:
-    script: 'echo $BROWSERSTACK_BUILD_NAME'
+# - task: CmdLine@2
+#   inputs:
+#     script: 'echo $BROWSERSTACK_BUILD_NAME'
  
 # - bash: npm install uuid
  
@@ -21,15 +21,15 @@ steps:
 #    jdkArchitectureOption: x64
 #    jdkSourceOption: PreInstalled
 
-# - task: BrowserStackConfig@0
-#   inputs:
-#     BrowserStackServiceEndPoint: 'bstack-conn'
-#     browserstackLocal: false
+- task: BrowserStackConfig@0
+  inputs:
+    BrowserStackServiceEndPoint: 'bstack-conn'
+    browserstackLocal: false
 - task: Maven@4
   env:
-    BROWSERSTACK_USERNAME: nithyamani1
-    BROWSERSTACK_ACCESS_KEY: vZcXz5fppKkLzzRqbHyw
-    BROWSERSTACK_BUILD_NAME: $(System.TeamProject)-$(Build.DefinitionName)-$(Build.BuildNumber)
+    # BROWSERSTACK_USERNAME: 
+    # BROWSERSTACK_ACCESS_KEY: 
+    # BROWSERSTACK_BUILD_NAME: $(System.TeamProject)-$(Build.DefinitionName)-$(Build.BuildNumber)
   inputs:
     mavenPomFile: 'pom.xml'
     goals: 'test -P single_web -Dbrowserstack.config=browserstack-web.yml'
