@@ -23,10 +23,10 @@ steps:
 #    jdkArchitectureOption: x64
 #    jdkSourceOption: PreInstalled
 
-- task: BrowserStackConfig@0
-  inputs:
-    BrowserStackServiceEndPoint: 'bstack-conn'
-    browserstackLocal: false
+# - task: BrowserStackConfig@0
+#   inputs:
+#     BrowserStackServiceEndPoint: 'bstack-conn'
+#     browserstackLocal: false
 - task: Maven@4
   inputs:
     mavenPomFile: 'pom.xml'
@@ -38,9 +38,9 @@ steps:
     mavenAuthenticateFeed: false
     effectivePomSkip: false
     sonarQubeRunAnalysis: false
-- task: BrowserStackResults@1
-  inputs:
-    browserstackProduct: 'automate'
+# - task: BrowserStackResults@1
+#   inputs:
+#     browserstackProduct: 'automate'
   
 - task: Gradle@3
   inputs:
