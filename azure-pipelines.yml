@@ -1,11 +1,18 @@
 pool:
   vmImage: ubuntu-latest
- 
+
+variables:
+  BROWSERSTACK_BUILD_NAME: $(System.JobName)+" "+$(System.JobId)
+
 steps:
  
 - task: NodeTool@0
   inputs:
     versionSpec: '10.x'
+
+- task: CmdLine@2
+  inputs:
+    script: 'echo $BROWSERSTACK_BUILD_NAME'
  
 # - bash: npm install uuid
  
@@ -15,30 +22,31 @@ steps:
 #    versionSpec: 11
 #    jdkArchitectureOption: x64
 #    jdkSourceOption: PreInstalled
-- task: BrowserStackConfig@0
-  inputs:
-    BrowserStackServiceEndPoint: 'bstack-conn'
-    browserstackLocal: false
-- task: Maven@4
-  inputs:
-    mavenPomFile: 'pom.xml'
-    goals: 'test -P single_web -Dbrowserstack.config=browserstack-web.yml'
-    publishJUnitResults: true
-    testResultsFiles: '**/surefire-reports/TEST-*.xml'
-    javaHomeOption: 'JDKVersion'
-    mavenVersionOption: 'Default'
-    mavenAuthenticateFeed: false
-    effectivePomSkip: false
-    sonarQubeRunAnalysis: false
-- task: BrowserStackResults@1
-  inputs:
-    browserstackProduct: 'automate'
+
+# - task: BrowserStackConfig@0
+#   inputs:
+#     BrowserStackServiceEndPoint: 'bstack-conn'
+#     browserstackLocal: false
+# - task: Maven@4
+#   inputs:
+#     mavenPomFile: 'pom.xml'
+#     goals: 'test -P single_web -Dbrowserstack.config=browserstack-web.yml'
+#     publishJUnitResults: true
+#     testResultsFiles: '**/surefire-reports/TEST-*.xml'
+#     javaHomeOption: 'JDKVersion'
+#     mavenVersionOption: 'Default'
+#     mavenAuthenticateFeed: false
+#     effectivePomSkip: false
+#     sonarQubeRunAnalysis: false
+# - task: BrowserStackResults@1
+#   inputs:
+#     browserstackProduct: 'automate'
   
-- task: Gradle@3
-  inputs:
-    gradleWrapperFile: 'gradlew'
-    tasks: 'build'
-    publishJUnitResults: true
-    testResultsFiles: '**/TEST-*.xml'
-    javaHomeOption: 'JDKVersion'
-    sqGradlePluginVersionChoice: 'specify'
+# - task: Gradle@3
+#   inputs:
+#     gradleWrapperFile: 'gradlew'
+#     tasks: 'build'
+#     publishJUnitResults: true
+#     testResultsFiles: '**/TEST-*.xml'
+#     javaHomeOption: 'JDKVersion'
+#     sqGradlePluginVersionChoice: 'specify'
