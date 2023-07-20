@@ -25,21 +25,21 @@ public class BaseTestWeb {
     @SuppressWarnings("unchecked")
     public void setUp() throws Exception {
         WebDriverManager.chromedriver().setup();
-        //ChromeOptions options = new ChromeOptions();
-        //options.addArguments("--remote-allow-origins=*");
-        MutableCapabilities capabilities = new MutableCapabilities();
+        ChromeOptions options = new ChromeOptions();
+        options.addArguments("--remote-allow-origins=*");
+        /*MutableCapabilities capabilities = new MutableCapabilities();
         HashMap<String, Object> browserstackOptions = new HashMap<String, Object>();
         LocalDate date = LocalDate.now();
-        /*browserstackOptions.put("projectName", "Demo Testng SDK 1");
+        browserstackOptions.put("projectName", "Demo Testng SDK 1");
         browserstackOptions.put("buildName", "sample");
-        browserstackOptions.put("buildIdentifier", S);
+        browserstackOptions.put("buildIdentifier", "s");
         browserstackOptions.put("sessionName", "name");
         capabilities.setCapability("buildIdentifier",date);
-        browserstackOptions.put("buildTag","1122");*/
-        capabilities.setCapability("bstack:options", browserstackOptions);
+        browserstackOptions.put("buildTag","1122");
+        capabilities.setCapability("bstack:options", browserstackOptions);*/
 
-        //driver = new ChromeDriver((ChromeOptions) capabilities);
-        driver = new RemoteWebDriver(new URL("https://"+username+":"+accesskey+"@hub-clud.browserstack.com/wd/hub"),capabilities);
+        driver = new ChromeDriver(options);
+        //driver = new RemoteWebDriver(new URL("https://"+username+":"+accesskey+"@hub-clud.browserstack.com/wd/hub"),capabilities);
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
     }

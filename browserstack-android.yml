@@ -28,6 +28,7 @@ source: testng:appium-sample-sdk:v1.0
 
 app: ./src/test/resources/WikipediaSample.apk
 #app: src/test/resources/LocalSample.apk #For running local tests
+#app: /Users/nithyamani/Desktop/Tools/APPS/WikipediaSample.apk
 
 # =======================================
 # Platforms (Browsers / Devices to test)
