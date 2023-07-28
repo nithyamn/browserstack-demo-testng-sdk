@@ -11,9 +11,9 @@
         <maven.compiler.target>1.8</maven.compiler.target>
         <surefire.version>3.0.0-M5</surefire.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <selenium.version>4.8.1</selenium.version>
+        <selenium.version>4.10.0</selenium.version>
         <testng.version>7.6.1</testng.version>
-        <appium.version>8.3.0</appium.version>
+        <appium.version>8.5.1</appium.version>
         <webdrivermanager.version>5.3.1</webdrivermanager.version>
         <config.file>config/single.testng.xml</config.file>
     </properties>
