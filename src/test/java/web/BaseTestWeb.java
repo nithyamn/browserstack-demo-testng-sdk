@@ -26,7 +26,7 @@ public class BaseTestWeb {
     public void setUp() throws Exception {
         WebDriverManager.chromedriver().setup();
         ChromeOptions options = new ChromeOptions();
-        options.addArguments("--remote-allow-origins=*");
+        //options.addArguments("--remote-allow-origins=*");
         /*MutableCapabilities capabilities = new MutableCapabilities();
         HashMap<String, Object> browserstackOptions = new HashMap<String, Object>();
         LocalDate date = LocalDate.now();
@@ -40,7 +40,7 @@ public class BaseTestWeb {
 
         driver = new ChromeDriver(options);
         //driver = new RemoteWebDriver(new URL("https://"+username+":"+accesskey+"@hub-clud.browserstack.com/wd/hub"),capabilities);
-        driver.manage().window().maximize();
+        //driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
     }
 
