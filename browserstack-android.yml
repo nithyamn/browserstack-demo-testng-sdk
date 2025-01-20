@@ -83,3 +83,5 @@ consoleLogs: errors # <string> Remote browser's console debug levels to be print
 # Available options are `disable`, `errors`, `warnings`, `info`, `verbose` (Default: errors)
 interactiveDebugging: true
 #appiumVersion: 2.0.0
+percy: true
+percyCaptureMode: auto

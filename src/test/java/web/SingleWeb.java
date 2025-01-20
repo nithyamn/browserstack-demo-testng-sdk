@@ -12,11 +12,11 @@ import java.util.List;
 
 class SingleWeb extends BaseTestWeb {
     public JavascriptExecutor jse;
-    @Test(description = "Login for bstackdemo website TC-9016")
+    @Test()
     public void e2eTest() throws Exception {
         /*** Fetch Session ID***/
         Reporter.log("[[PROPERTY|id=TC-9016]]\n", true);
-        Reporter.log("[[PROPERTY|Configurations=TC-9016]]\n", true);
+        Reporter.log("[[[PROPERTY|Configurations=" + platformDetails + "]]]\n", true);
 
         SessionId sessionId = ((RemoteWebDriver)driver).getSessionId();
         driver.get("https://bstackdemo.com/");

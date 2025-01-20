@@ -9,10 +9,10 @@
     <properties>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
-        <surefire.version>3.0.0-M5</surefire.version>
+        <surefire.version>3.5.2</surefire.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <selenium.version>4.10.0</selenium.version>
-        <testng.version>7.6.1</testng.version>
+        <testng.version>7.10.2</testng.version>
         <appium.version>8.5.1</appium.version>
         <webdrivermanager.version>5.3.1</webdrivermanager.version>
         <config.file>config/single.testng.xml</config.file>
@@ -60,6 +60,14 @@
             <artifactId>webdrivermanager</artifactId>
             <version>${webdrivermanager.version}</version>
         </dependency>
+        <!-- https://mvnrepository.com/artifact/com.squareup.okhttp3/okhttp -->
+        <dependency>
+            <groupId>com.konghq</groupId>
+            <artifactId>unirest-java-core</artifactId>
+            <version>4.4.5</version>
+            <scope>provided</scope>
+        </dependency>
+
     </dependencies>
     <build>
         <plugins>
