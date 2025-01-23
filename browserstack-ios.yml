@@ -36,15 +36,15 @@ app: ./src/test/resources/BStackSampleApp.ipa
 # Entire list available here -> (https://www.browserstack.com/list-of-browsers-and-platforms/automate)
 
 platforms:
-  - deviceName: iPhone 14 Pro
-    osVersion: 16
-    platformName: ios
-  - deviceName: iPhone 11 Pro Max
-    osVersion: 13
-    platformName: ios
-  - deviceName: iPhone XS
-    osVersion: 14
-    platformName: ios
+  - platformName: ios
+    platformVersion: 16
+    deviceName: iPhone 14 Pro Max
+  - platformName: ios
+    platformVersion: 15
+    deviceName: iPhone XS
+  - platformName: ios
+    platformVersion: 14
+    deviceName: iPhone 11
 
 # =======================
 # Parallels per Platform
@@ -56,6 +56,7 @@ platforms:
 #
 # Example 2 - If you have configured 1 platform and set `parallelsPerPlatform` as 5, a total of 5 (1 * 5) parallel threads will be used on BrowserStack
 parallelsPerPlatform: 1
+appProfiling: true
 
 # ==========================================
 # BrowserStack Local
@@ -79,3 +80,4 @@ consoleLogs: errors # <string> Remote browser's console debug levels to be print
 # Available options are `disable`, `errors`, `warnings`, `info`, `verbose` (Default: errors)
 percy: true
 percyCaptureMode: auto
+testObservability: true
