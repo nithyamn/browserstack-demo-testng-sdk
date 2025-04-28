@@ -66,7 +66,7 @@ source: testng:archetype-setup:v1.5
 # ==========================================
 # Set browserStackLocal to true if your website under test is not accessible publicly over the internet
 # Learn more about how BrowserStack Local works here -> https://www.browserstack.com/docs/automate/selenium/local-testing-introduction
-browserstackLocal: true # <boolean> (Default false)
+browserstackLocal: false # <boolean> (Default false)
 #browserStackLocalOptions:
 #  forceLocal: true
 # Options to be passed to BrowserStack local in-case of advanced configurations
