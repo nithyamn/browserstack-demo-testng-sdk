@@ -33,6 +33,7 @@ public class AndroidTest extends AndroidBaseTest {
 
 
       List<WebElement> allProductsName = driver.findElements(AppiumBy.className("android.widget.TextView"));
-      Assert.assertTrue(allProductsName.size() > 0);
+//      Assert.assertTrue(allProductsName.size() > 0);
+        Assert.assertTrue(allProductsName.size() > 0);
     }
 }

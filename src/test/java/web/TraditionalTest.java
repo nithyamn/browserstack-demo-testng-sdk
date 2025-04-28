@@ -34,7 +34,7 @@ public class TraditionalTest {
         caps.setCapability("browser",browser);
         caps.setCapability("build","Tradition Test Execution");
         caps.setCapability("project","Parallel runs");
-        caps.setCapability("name","parallel_test");
+        caps.setCapability("name","parallel_test 3");
         caps.setCapability("interactiveDebugging","true");
         caps.setCapability("debug","false");
 

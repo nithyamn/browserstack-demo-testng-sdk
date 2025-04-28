@@ -29,20 +29,20 @@ framework: testng
 # Platforms object contains all the browser / device combinations you want to test on.
 # Entire list available here -> (https://www.browserstack.com/list-of-browsers-and-platforms/automate)
 platforms:
-  - os: Windows
-    osVersion: 11
-    browserName: Edge
+  - browserName: Chrome
+    os: OS X
+    osVersion: Sonoma
     browserVersion: latest
-  - os: Windows
-    osVersion: 11
-    browserName: Chrome
-    browserVersion: latest
-  - deviceName: Google Pixel 8 Pro
-    browserName: chrome
-    osVersion: 14.0
-  - deviceName: iPhone 14
-    browserName: safari
-    osVersion: 16
+#  - os: Windows
+#    osVersion: 11
+#    browserName: Chrome
+#    browserVersion: latest
+#  - deviceName: Google Pixel 8 Pro
+#    browserName: chrome
+#    osVersion: 14.0
+#  - deviceName: iPhone 14
+#    browserName: safari
+#    osVersion: 16
 
 # =======================
 # Parallels per Platform
@@ -87,3 +87,4 @@ networkLogs: false # <boolean> Set to true to enable HAR logs capturing
 consoleLogs: errors # <string> Remote browser's console debug levels to be printed (Default: errors)
 # Available options are `disable`, `errors`, `warnings`, `info`, `verbose` (Default: errors)
 #browserstack.geoLocation: UZ
+#uploadMedia: [""]

@@ -3,7 +3,7 @@
 <suite name="Single" parallel="tests" thread-count="1">
     <test name="SingleTest1">
         <classes>
-            <class name="web.SingleWeb"/>
+            <class name="web.UploadFile"/>
         </classes>
     </test>
 </suite>
